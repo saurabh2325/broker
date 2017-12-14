@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <base href="/">
+        <meta charset="utf-8">
+        <title>Broker Conveyancing</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/vendor.css -->
+        <!-- bower:css -->
+         <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" />
+         <link rel="stylesheet" href="../bower_components/perfect-scrollbar/src/perfect-scrollbar.css" />
+         <link rel="stylesheet" href="../bower_components/angular-loading-bar/build/loading-bar.css" />
+        
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <link rel="stylesheet" href="styles/app-green.css" />
+        <link rel="stylesheet" href="styles/style.css" />
+        <!-- build:js scripts/vendor.js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <!-- bower:js -->
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="../bower_components/angular-loading-bar/build/loading-bar.js"></script>
+        <script src="../bower_components/angular-animate/angular-animate.js"></script>
+        <script src="../bower_components/angular-aria/angular-aria.js"></script>
+        <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="../bower_components/perfect-scrollbar/src/perfect-scrollbar.js"></script>
+        <script src="../bower_components/angular-perfect-scrollbar-4.1.1fixed/src/angular-perfect-scrollbar.js"></script>
+        <script src="../bower_components/angular-growl-notifications/dist/angular-growl-notifications.min.js"></script>
+        <!-- endbower -->
+        <!-- build:js({.tmp,app}) scripts/service.js -->
+        <script src="scripts/services/auth.service.js"></script>
+        <script src="scripts/services/agent.service.js"></script>
+        <script src="scripts/services/advisor.service.js"></script>
+        <script src="scripts/services/solicitor.service.js"></script>
+        <script src="scripts/services/visitor.service.js"></script>
+        <script src="scripts/services/purchase.quotation.service.js"></script>
+        <script src="scripts/services/sale.quotation.service.js"></script>
+        <script src="scripts/services/reMortgage.quotation.service.js"></script>
+        <script src="scripts/services/salePurchase.quotation.service.js"></script>
+        <script src="scripts/services/cashback.quotation.service.js"></script>
+        
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.controller.js"></script>
+        <script src="scripts/controllers/user/agent.controller.js"></script>
+        <script src="scripts/controllers/user/advisor.controller.js"></script>
+        <script src="scripts/controllers/user/solicitor.controller.js"></script>
+        <script src="scripts/controllers/visitor/visitor.controller.js"></script>
+        <script src="scripts/controllers/email/email.controller.js"></script>
+        <script src="scripts/controllers/quotation/cashback.quotation.controller.js"></script>
+        <script src="scripts/controllers/quotation/purchase.quotation.controller.js"></script>
+        <script src="scripts/controllers/quotation/re-mortgage.quotation.controller.js"></script>
+        <script src="scripts/controllers/quotation/sale-purchase.quotation.controller.js"></script>
+        <script src="scripts/controllers/quotation/sale.quotation.controller.js"></script>
+        <script src="scripts/controllers/myQuote/myQuote.quotation.controller.js"></script>
+        <script src="scripts/controllers/matter/matter.controller.js"></script>
+        <script src="scripts/controllers/profile/advisor.profile.controller.js"></script>
+
+
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/tabsCtrl.js"></script>
+        <script src="scripts/directives/topnav/topnav.js"></script>
+        <script src="scripts/directives/footer/footer.js"></script>
+
+
+        <!-- <script src="scripts/directives/stats/stats.js"></script> -->
+        <script src="scripts/directives/home-chart/home-chart.js"></script>
+        <script src="scripts/directives/sidenav/sidenav.js"></script>
+        <script src="scripts/directives/sidenav/menu/menu.js"></script>
+        <script src="scripts/directives/pageheader/pageheader.js"></script>
+        <script src="scripts/directives/stats/stats.js"></script>
+        <script src="scripts/directives/validation/match.js"></script>
+        <script src="scripts/directives/validation/numberLength.js"></script>
+        <script src="scripts/directives/validation/numberOnly.js"></script>
+        <script src="scripts/directives/validation/rsOnly.js"></script>
+        <script src="scripts/directives/validation/titleCase.js"></script>
+        <script src="scripts/directives/validation/titleCaseHtml.js"></script>
+        <script src="scripts/directives/validation/upperCase.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body ng-app="app" ng-controller="mainCtrl">
+        <div ui-view></div>
+    </body>
+</html>

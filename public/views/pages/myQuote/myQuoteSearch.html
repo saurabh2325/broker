@@ -1,0 +1,76 @@
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">Search - Instructions 	  
+                <div class="pull-right">
+                    <!-- <button type="button" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i></button> -->
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+                </div>
+            </h4>
+        </div>
+        <div class="panel-body">
+            <div class="row show-hide-message" ng-show= successMsg>
+                <div class="alert alert-success">{{successMsg}}</div>
+            </div>
+            <div class="row show-hide-message" ng-show= errorMsg>
+                <div class="alert alert-danger">{{errorMsg}}</div>
+            </div>
+            <form name="advisorForm" id="advisorForm" novalidate>
+                <div class="form-body">
+                    <div class="quote-section_box">
+                        <div class="full_width">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Agent</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                    <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Surname</label>
+                                <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                            </div>
+                            <div class="form-group">
+                                <label>Conveyancer</label>
+                                <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                            </div>        
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="description">Post Code</label>
+                                <input type="text" class="form-control" ng-model ="advisorData.address.number" name="number" placeholder="Building name/number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Type</label>
+                                <input type="text" class="form-control" ng-model ="advisorData.address.street" name="street" placeholder="Street">
+                            </div>        
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="description">Case ID</label>
+                                <input type="text" class="form-control" ng-model ="advisorData.address.number" name="number" placeholder="Building name/number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Status</label>
+                                <input type="text" class="form-control" ng-model ="advisorData.address.street" name="street" placeholder="Street">
+                            </div>        
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panal-body-footer panal-body-footer_modified">
+            <div class="pull-left">
+                <button class="btn btn-primary" ng-click="createAdvisor(advisorForm.$valid, advisorForm)">Search</button>
+                <button class="btn btn-primary" ng-click="createAdvisor(advisorForm.$valid, advisorForm)">Clear</button>
+                <button class="btn btn-primary" ng-click="createAdvisor(advisorForm.$valid, advisorForm)">View All</button>
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-default" ng-click="closePanel()">Main Menu</button>
+            </div>
+            
+            
+        </div>       
+    </div>
+        

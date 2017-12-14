@@ -1,0 +1,204 @@
+<div id="quote">
+        <div class="panel panel-default">
+           <div class="panel-heading">
+              <h5 class="panel-title">
+                 Create Sale Quote 2/1    
+                 <div class="pull-right">
+                    <a ui-sref="home"><button class="btn btn-info btn-xs"><i class="fa fa-home"></i></button></a>
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="nextViewPanel()"><i class="fa fa-arrow-right"></i></button>
+                 </div>
+              </h5>
+           </div>
+                <div class="panel-body">
+                  <div class="form-body">
+                    <div class="quote-section_box">
+                        <div class="col-md-6">
+                           <h5 class="title-lbl">Source Details:</h5>
+                           <div class="form-group">
+                              <label>Branch*</label>
+                              <select class="form-control" ng-model="quoteData.branch_name" name="branch_name" ng-disabled="true">
+                                 <option value="">Select</option>
+                                 <option value="A">A</option>
+                                 <option value="B">B</option>
+                                 <!-- <option ng-repeat="country in countryData" value="{{country.country_id}}">{{country.country_name}}</option> -->
+                              </select>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <h5 class="title-lbl">&nbsp;</h5>
+                           <div class="form-group">
+                              <label>Quotation Id*</label>
+                              <input type="text" class="form-control" ng-model ="quoteData.quotation_id" name="quotation_id" ng-disabled="true">
+                           </div>
+                        </div>
+                    </div>
+                        <div class="table_overflow_div">
+                    <div class="quote-section_box titlee">
+                      <div class="col-md-12">
+                        <h5 class="title-lbl">Applicant Details:</h5>
+                      </div>
+                      <div class="head_line">
+                          <table class="table name_table">
+                            <thead>
+                              <th>&nbsp;</th>
+                              <th>Title*</th>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th class="blank_td dont_remove"></th>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <div class="form-group">
+                                      <div class="checkbox">
+                                          <label>
+                                              <input type="checkbox" ng-model='applicant1' ng-disabled="true"> Applicant 1
+                                          </label>
+                                      </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="form-group">
+                                      <select class="form-control" ng-model="quoteData.applicant1_title" name="applicant1_title" ng-disabled="true" >
+                                          <option value="">Select</option>
+                                          <option value="Mr.">Mr.</option>
+                                          <option value="Mrs.">Mrs.</option>
+                                          <option value="Miss.">Miss.</option>
+                                      </select>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" ng-model ="quoteData.applicant1_first_name" name="applicant1_first_name" ng-disabled="true" >
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="form-group">
+                                    <input type="text" class="form-control" ng-model ="quoteData.applicant1_last_name" name="applicant1_last_name" ng-disabled="true" >
+                                  </div>
+                                </td>
+                                <td class="blank_td dont_remove"></td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <div class="form-group">
+                                      <div class="checkbox">
+                                          <label>
+                                              <input type="checkbox" ng-model='applicant2' ng-disabled="true">Applicant 2
+                                          </label>
+                                      </div>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="form-group">
+                                      <select class="form-control" ng-model="quoteData.applicant2_title" name="title" ng-disabled="true" >
+                                          <option value="">Select</option>
+                                          <option value="Mr.">Mr.</option>
+                                          <option value="Mrs.">Mrs.</option>
+                                          <option value="Miss.">Miss.</option>
+                                      </select>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" ng-model ="quoteData.applicant2_first_name" name="first_name" ng-disabled="true">
+                                  </div>
+                                </td>
+                                <td>
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" ng-model ="quoteData.applicant2_last_name" name="last_name" ng-disabled="true">
+                                  </div>
+                                </td>
+                                <td class="blank_td dont_remove"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quote-section_box">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <h5 class="title-lbl">Property Details:</h5>
+                          <div class="form-group">
+                            <label>Sale Price</label>
+                            <input type="text" class="form-control" ng-model ="quoteData.price" name="price" ng-disabled="true">
+                          </div>
+                          <div class="form-group">
+                              <label>Is Property Address Known?</label>
+                              <div class="radio">
+                                  <label>
+                                      <input type="radio" ng-model='value' value="true" ng-disabled="true"> Yes
+                                      <span>&nbsp;&nbsp;&nbsp;</span>
+                                      <span>&nbsp;&nbsp;&nbsp;</span>
+                                      <input type="radio" ng-model='value' value="false" ng-disabled="true"> No
+                                      <span>&nbsp;&nbsp;&nbsp;</span>
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label>Postcode</label>
+                              <input type="text" class="form-control" ng-model ="postcode" name="postcode" ng-disabled="true">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <iframe style="margin-top: 10px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.7457248012706!2d75.87380961453897!3d22.700507785117136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fce2c575d4e9%3A0xd86a0bab30a34f7!2sSixth+Sense+IT+Solutions!5e0!3m2!1sen!2sin!4v1512550754686" width="100%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <h5 class="title-lbl">&nbsp;</h5>
+                        <!-- <div class="form-group">
+                            <label>Please Enter Numbers only (No Comma or $ sign)</label>
+                        </div>
+                        <div class="form-group">
+                            <label>If No, wait for the page to reload and then proceed to the next page.</label>
+                        </div>
+                        <div class="form-group">
+                            <label>Enter Postcode, click on FIND and select property from list.</label>
+                        </div> -->
+                      </div>
+                    </div>
+                    <div class="quote-section_box">
+                      <div class="col-md-4">
+                        <h5 class="title-lbl">Address Details:</h5>
+                        <div class="form-group">
+                          <label for="description">Flat number*:</label>
+                          <input type="text" class="form-control" ng-model ="quoteData.address.number" name="number" ng-disabled="true">
+                        </div>
+                        <div class="form-group">
+                          <label>Town/City</label>
+                          <input type="text" class="form-control" ng-model ="quoteData.address.city" name="city" ng-disabled="true">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <h5 class="title-lbl">&nbsp;</h5>
+                        <div class="form-group">
+                          <label for="description">Street*:</label>
+                          <input type="text" class="form-control" ng-model ="quoteData.address.street" name="street" ng-disabled="true">
+                        </div>
+                        <div class="form-group">
+                          <label>Country*</label>
+                          <input type="text" class="form-control" ng-model ="quoteData.address.country" name="country" ng-disabled="true">
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <h5 class="title-lbl">&nbsp;</h5>
+                        <div class="form-group">
+                          <label for="description">Area*:</label>
+                          <input type="text" class="form-control" ng-model ="quoteData.address.area" name="area" ng-disabled="true">
+                        </div>
+                        <div class="form-group">
+                          <label>Postal Code*:</label>
+                          <input type="text" class="form-control" ng-model ="quoteData.address.zip" name="zip"  ng-disabled="true">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               </div>
+               <div class="panal-body-footer">
+                  <a ui-sref="home"><button class="btn btn-default">Main Menu</button></a>
+                  <button class="btn btn-primary" ng-click="nextViewPanel()">Next</button>
+               </div>
+           </form>       
+        </div>
+      </div>

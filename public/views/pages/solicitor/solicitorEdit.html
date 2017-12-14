@@ -1,0 +1,140 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Solicitor Details :		  
+            <div class="pull-right">
+                <!-- <button type="button" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i></button> -->
+                <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+            </div>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="row show-hide-message" ng-show= successMsg>
+            <div class="alert alert-success">{{successMsg}}</div>
+        </div>
+        <div class="row show-hide-message" ng-show= errorMsg>
+            <div class="alert alert-danger">{{errorMsg}}</div>
+        </div>
+        <form name="solicitorForm" id="solicitorForm" novalidate>
+            <div class="form-body">
+                <h3 class="title-lbl">Basic Information</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Solicitor Code Id*</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.uid" name="uid" placeholder="solicitor code Id" ng-disabled="true" required>
+                            <p class="help-block" ng-show="(!solicitorForm.uid.$pristine && solicitorForm.uid.$error.required) || (solicitorForm.$submitted && solicitorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.company_name" name="company_name" placeholder="Company name">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Company Phone No.</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                        </div>
+                        <div class="form-group">
+                            <label>First Name*</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.first_name" name="first_name" placeholder="First name" required>
+                            <p class="help-block" ng-show="(!solicitorForm.first_name.$pristine && solicitorForm.first_name.$error.required) || (solicitorForm.$submitted && solicitorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name*</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.last_name" name="last_name" placeholder="Last name" required>
+                            <p class="help-block" ng-show="(!solicitorForm.last_name.$pristine && solicitorForm.last_name.$error.required) || (solicitorForm.$submitted && solicitorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Email*</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.email" name="email" placeholder="Email address" required>
+                            <p class="help-block" ng-show="(!solicitorForm.email.$pristine && solicitorForm.email.$error.required) || (solicitorForm.$submitted && solicitorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Territory*</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.territory" name="territory" placeholder="Territory/Area of working" required>
+                            <p class="help-block" ng-show="(!solicitorForm.territory.$pristine && solicitorForm.territory.$error.required) || (solicitorForm.$submitted && solicitorForm.territory.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <!-- <div class="form-group" ng-class="{ 'has-success':(solicitorForm.firstPassword.$valid && !solicitorForm.firstPassword.$pristine), 'has-error':(!solicitorForm.firstPassword.$valid && !solicitorForm.firstPassword.$pristine) || (!solicitorForm.firstPassword.$valid && solicitorForm.$submitted) }">
+                            <label>Password*</label>   
+                            <input type="password" class="form-control" ng-model='firstPassword' placeholder="Password" aria-describedby="basic-addon2" name="firstPassword" ng-pattern="/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,35}$/" ng-minlength="3" ng-maxlength="35" required="">
+                            <p class="help-block" ng-show="(!solicitorForm.firstPassword.$pristine && solicitorForm.firstPassword.$error.required) || (solicitorForm.$submitted && solicitorForm.firstPassword.$error.required)" style="color: #c70505;">This field is required</p>
+                            <ul ng-show="(!solicitorForm.firstPassword.$pristine && solicitorForm.firstPassword.$error.pattern) || (!solicitorForm.firstPassword.$pristine && solicitorForm.firstPassword.$error.minlength) || (!solicitorForm.firstPassword.$pristine && solicitorForm.firstPassword.$error.maxlength)" style="color: #c70505;" class="help-block">
+                                <li>Must contain at least one upper case letter</li>
+                                <li>Must contain at least one lower case letter</li>
+                                <li>Must contain at least one number</li>
+                                <li>Must contain at least one special character</li>
+                                <li>Must contain at least 8 characters but no more than</li>
+                            </ul>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-success':confirmed && !solicitorForm.confirmPassword.$error.required, 'has-error':( !confirmed && !solicitorForm.confirmPassword.$error.required) || (solicitorForm.confirmPassword.$error.required && !solicitorForm.confirmPassword.$pristine) || (solicitorForm.$submitted && solicitorForm.confirmPassword.$error.required) }">
+                            <label> Confirm Password*</label>
+                            <input type="password" name="confirmPassword" class=" form-control" match = '{{[firstPassword]}}' ng-change="solicitorData.password = confirm" ng-model='confirm' placeholder="Confirm password" aria-describedby="basic-addon2" required="" >
+                            <p class="help-block" ng-show="(!solicitorForm.confirmPassword.$pristine && solicitorForm.confirmPassword.$error.required) || (solicitorForm.$submitted && solicitorForm.confirmPassword.$error.required)" style="color: #c70505;">This field is required</p>
+                            <p class="help-block" ng-show="!confirmed && !solicitorForm.confirmPassword.$pristine && solicitorForm.firstPassword.$valid" style="color: #c70505;">Passwords do not match</p>
+                        </div> -->
+                        <div class="form-group">
+                            <label>Status</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model='solicitorData.status' value= "0"> Active
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                </label>
+                                <label>
+                                    <input type="radio" ng-model='solicitorData.status' value= "1">Inactive
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>           
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Work Phone No</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.work_contact_no" name="work_contact_no" placeholder="Work phone no">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile No*</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.mobile_contact_no" name="mobile_contact_no" placeholder="Mobile no" required>
+                            <p class="help-block" ng-show="(!solicitorForm.mobile_contact_no.$pristine && solicitorForm.mobile_contact_no.$error.required) || (solicitorForm.$submitted && solicitorForm.mobile_contact_no.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Building name/number:</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.address.number" name="number" placeholder="Building name/number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Street:</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.address.street" name="street" placeholder="Street">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Area:</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.address.area" name="area" placeholder="Area">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.address.country" name="country" placeholder="Country">
+                           
+                        </div>
+                        <div class="form-group">
+                            <label>Town/City</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.address.city" name="city" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.address.zip" name="zip" placeholder="Postal code">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Bank Details</label>
+                            <input type="text" class="form-control" ng-model ="solicitorData.bank_detail" name="bank_detail" placeholder="Bank detail">
+                            
+                        </div>          
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panal-body-footer">
+        <button class="btn btn-default" ng-click="closePanel()">Cancel</button>
+        <button class="btn btn-primary" ng-click="updateSolicitor(solicitorForm.$valid, solicitorForm)">Save</button>
+    </div>       
+</div>
+      

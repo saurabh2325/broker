@@ -1,0 +1,144 @@
+<pageheader pagename="Advisors" subtitle="{{subtitle}}"></pageheader>
+<div class="conter-wrapper">
+    <div class="slide-animate-container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Advisor Details :		  
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i></button>
+                        <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+                    </div>
+                </h3>
+            </div>
+            <form name="advisorForm" id="advisorForm" novalidate>
+                <div class="panel-body">
+                    <div class="row show-hide-message" ng-show= successMsg>
+                        <div class="alert alert-success">{{successMsg}}</div>
+                    </div>
+                    <div class="row show-hide-message" ng-show= errorMsg>
+                        <div class="alert alert-danger">{{errorMsg}}</div>
+                    </div>
+                    <div class="form-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Code Id*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                    <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>Company Phone No.</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                </div>
+                                <div class="form-group">
+                                    <label>First Name*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                    <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                    <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                    <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Territory*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.territory" name="territory" placeholder="Territory/Area of working" required>
+                                    <p class="help-block" ng-show="(!advisorForm.territory.$pristine && advisorForm.territory.$error.required) || (advisorForm.$submitted && advisorForm.territory.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <!-- <div class="form-group" ng-class="{ 'has-success':(advisorForm.firstPassword.$valid && !advisorForm.firstPassword.$pristine), 'has-error':(!advisorForm.firstPassword.$valid && !advisorForm.firstPassword.$pristine) || (!advisorForm.firstPassword.$valid && advisorForm.$submitted) }">
+                                    <label>Password*</label>   
+                                    <input type="password" class="form-control" ng-model='firstPassword' placeholder="Password" aria-describedby="basic-addon2" name="firstPassword" ng-pattern="/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,35}$/" ng-minlength="3" ng-maxlength="35" required="">
+                                    <p class="help-block" ng-show="(!advisorForm.firstPassword.$pristine && advisorForm.firstPassword.$error.required) || (advisorForm.$submitted && advisorForm.firstPassword.$error.required)" style="color: #c70505;">This field is required</p>
+                                    <ul ng-show="(!advisorForm.firstPassword.$pristine && advisorForm.firstPassword.$error.pattern) || (!advisorForm.firstPassword.$pristine && advisorForm.firstPassword.$error.minlength) || (!advisorForm.firstPassword.$pristine && advisorForm.firstPassword.$error.maxlength)" style="color: #c70505;" class="help-block">
+                                        <li>Must contain at least one upper case letter</li>
+                                        <li>Must contain at least one lower case letter</li>
+                                        <li>Must contain at least one number</li>
+                                        <li>Must contain at least one special character</li>
+                                        <li>Must contain at least 8 characters but no more than</li>
+                                    </ul>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-success':confirmed && !advisorForm.confirmPassword.$error.required, 'has-error':( !confirmed && !advisorForm.confirmPassword.$error.required) || (advisorForm.confirmPassword.$error.required && !advisorForm.confirmPassword.$pristine) || (advisorForm.$submitted && advisorForm.confirmPassword.$error.required) }">
+                                    <label> Confirm Password*</label>
+                                    <input type="password" name="confirmPassword" class=" form-control" match = '{{[firstPassword]}}' ng-change="advisorData.password = confirm" ng-model='confirm' placeholder="Confirm password" aria-describedby="basic-addon2" required="" >
+                                    <p class="help-block" ng-show="(!advisorForm.confirmPassword.$pristine && advisorForm.confirmPassword.$error.required) || (advisorForm.$submitted && advisorForm.confirmPassword.$error.required)" style="color: #c70505;">This field is required</p>
+                                    <p class="help-block" ng-show="!confirmed && !advisorForm.confirmPassword.$pristine && advisorForm.firstPassword.$valid" style="color: #c70505;">Passwords do not match</p>
+                                </div> -->
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" ng-model='advisorData.status' value= "0"> Active
+                                            <span>&nbsp;&nbsp;&nbsp;</span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" ng-model='advisorData.status' value= "1">Inactive
+                                            <span>&nbsp;&nbsp;&nbsp;</span>
+                                        </label>
+                                    </div>
+                                </div>           
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Work Phone No</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.work_contact_no" name="work_contact_no" placeholder="Work phone no">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>Mobile No*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.mobile_contact_no" name="mobile_contact_no" placeholder="Mobile no" required>
+                                    <p class="help-block" ng-show="(!advisorForm.mobile_contact_no.$pristine && advisorForm.mobile_contact_no.$error.required) || (advisorForm.$submitted && advisorForm.mobile_contact_no.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Building name/number:</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.number" name="number" placeholder="Building name/number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Street:</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.street" name="street" placeholder="Street">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Area:</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.area" name="area" placeholder="Area">
+                                </div>
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.country" name="country" placeholder="Country">
+                                   
+                                </div>
+                                <div class="form-group">
+                                    <label>Town/City</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.city" name="city" placeholder="City">
+                                </div>
+                                <div class="form-group">
+                                    <label>Postal Code</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.zip" name="zip" placeholder="Postal code">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>Bank Details</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.bank_detail" name="bank_detail" placeholder="Bank detail">
+                                    
+                                </div>          
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="panal-body-footer">
+                    <button class="btn btn-default" ng-click="closePanel()">Cancel</button>
+                    <button class="btn btn-primary" ng-click="updateAdvisor(advisorForm.$valid, advisorForm)">Update</button>
+                </div>
+            </form>
+        </div>   
+    </div>
+</div>

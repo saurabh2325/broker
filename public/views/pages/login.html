@@ -1,0 +1,42 @@
+<div class="errors col-sm-8 col-sm-offset-2"></div>
+<div class="login-outer">
+	<div class="login-wrap">
+		<div class="login-left striped-bg text-center">
+			<a href class="logo-lg">
+				<i class="fa fa-paper-plane"></i> broker conveyancing
+			</a>		
+			<div class="slogan">An trading style of conveyancing alliance  </div>
+		</div>
+		<div class="login-right striped-bg">
+			<div class="heading">Login to your Account</div>
+			<div class="input">
+				<form class="form-horizontal" role="form" ng-submit="submit()">
+					<input type="hidden" name="permisson" ng-model="loginData.permission">
+					<div class="login-input-group">
+						<span class="login-input-group-addon"><i class="fa fa-at fa-fw"></i></span>
+						<input type="text" class="form-control login_form_control" ng-model="loginData.email" name="email" placeholder="email" value="">
+					</div>
+					<div class="login-input-group">
+						<span class="login-input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+						<input type="password" class="form-control login_form_control" ng-model="loginData.password" placeholder="password" name="password">
+					</div>
+					<button type="submit" class="btn btn-default btn-lg submit">Login</button>
+				</form>	
+				<div class="row show-hide-message" style="margin: 10px 96px;" ng-show= successMsg>
+					<div class="alert alert-success">{{successMsg}}</div>
+				</div>
+				<div class="row show-hide-message" style="margin: 10px 96px;" ng-show= errorMsg>
+					<div class="alert alert-danger">{{errorMsg}}</div>
+				</div>			
+			</div>
+			<div class="rightFooter">
+				<a ui-sref="signup" ng-show="register">Don't have an Account?</a>
+				<a href ng-click="forgatePage()" class="m-l">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

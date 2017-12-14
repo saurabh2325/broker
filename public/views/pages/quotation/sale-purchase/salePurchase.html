@@ -1,0 +1,17 @@
+<pageheader pagename="Sale-Purchase Quatation" subtitle="{{subtitle}}"></pageheader>
+<div class="conter-wrapper">
+    <div class="slide-animate-container">
+        <growl-notifications>
+            <growl-notification ng-if="successMsg" class="growl-primary fading">
+                <a href="javascript:;" ng-click="$growlNotification.remove()" class="close"><i class="fa fa-times"></i></a>
+                {{successMsg}}
+            </growl-notification>
+            <growl-notification ng-if="errorMsg" class="growl-error fading">
+                <a href="javascript:;" ng-click="$growlNotification.remove()" class="close"><i class="fa fa-times"></i></a>
+                {{errorMsg}}
+            </growl-notification>
+        </growl-notifications>
+        <div class="slide-animate"  style="height:auto;"  ng-include="templateUrl">
+        </div>   
+    </div>
+</div>

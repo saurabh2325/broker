@@ -1,0 +1,84 @@
+<div>
+	<div class="tab-pane active" id="menu">
+		<div class="photo-container text-center">
+        </div>
+		<div class="section-heading" ng-show="admin">Menus 1
+		</div>
+		<ul class="nav sidebar-nav" ng-show="admin">
+			<li ng-class="{active: $state.includes('/admin/home')}"><a ui-sref="/admin/home" ng-click="showSubNav(0)"><i class="fa fa-home"></i> <span class="menu-text">Home</span></a>
+            </li>
+            <li ng-class="{active: $state.includes('/admin/agent')}"><a ui-sref="/admin/agent" ng-click="showSubNav(0)"><i class="fa fa-user-plus"></i> <span class="menu-text">Agent</span></a>
+            </li>
+            <li ng-class="{active: $state.includes('/admin/solicitor')}"><a ui-sref="/admin/solicitor" ng-click="showSubNav(0)"><i class="fa fa-user-plus"></i> <span class="menu-text">Solicitor </span></a>
+            </li>
+            <li ng-class="{active: $state.includes('/admin/advisor')}"><a ui-sref="/admin/advisor" ng-click="showSubNav(0)"><i class="fa fa-user-plus"></i> <span class="menu-text">Advisor </span></a>
+            </li>
+            <!-- <li ng-class="{active: $state.includes('/admin/Solicitor')}"><a ui-sref="blank" ng-click="showSubNav(0)"><i class="fa fa-file-o"></i> <span class="menu-text">Blank Page </span></a>
+            </li> -->
+        </ul>
+        <div class="section-heading" ng-show="agent">Menus 2
+        </div>
+        <ul class="nav sidebar-nav" ng-show="agent">
+            <li ng-class="{active: $state.includes('/agent/home')}"><a ui-sref="/agent/home" ng-click="showSubNav(0)"><i class="fa fa-home"></i> <span class="menu-text">Home</span></a>
+            </li>
+            <li ng-class="{active: $state.includes('/agent/visitor')}"><a ui-sref="/agent/visitor" ng-click="showSubNav(0)"><i class="fa fa-user-plus"></i> <span class="menu-text">Visitor</span></a>
+            </li>
+            <li ng-class="{active: $state.includes('/agent/advisor')}"><a ui-sref="/agent/advisor" ng-click="showSubNav(0)"><i class="fa fa-user-plus"></i> <span class="menu-text">Advisor</span></a>
+            </li>
+            <!-- <li ng-class="{active: $state.includes('signup')}"><a ui-sref="signup" ng-click="showSubNav(0)"><i class="fa fa-user-plus"></i> <span class="menu-text">Sign Up </span></a>
+            </li>
+            <li ng-class="{active: $state.includes('404-page')}"><a ui-sref="404-page" ng-click="showSubNav(0)"><i class="fa fa-exclamation-circle"></i> <span class="menu-text">404 Page </span></a>
+            </li>
+            <li ng-class="{active: $state.includes('blank')}"><a ui-sref="blank" ng-click="showSubNav(0)"><i class="fa fa-file-o"></i> <span class="menu-text">Blank Page </span></a>
+            </li> -->
+        </ul>
+        <div class="section-heading" ng-show="solicitor">Menus 3
+        </div>
+        <ul class="nav sidebar-nav" ng-show="solicitor">
+            <li ng-class="{active: $state.includes('home')}"><a ui-sref="home" ng-click="showSubNav(0)"><i class="fa fa-home"></i> <span class="menu-text">Home</span></a>
+            </li>
+            <li ng-class="{active: $state.includes('login')}"><a ui-sref="login" ng-click="showSubNav(0)"><i class="fa fa-sign-in"></i> <span class="menu-text">Matter</span></a>
+            </li>
+            <!-- <li ng-class="{active: $state.includes('signup')}"><a ui-sref="signup" ng-click="showSubNav(0)"><i class="fa fa-user-plus"></i> <span class="menu-text">Sign Up </span></a>
+            </li>
+            <li ng-class="{active: $state.includes('404-page')}"><a ui-sref="404-page" ng-click="showSubNav(0)"><i class="fa fa-exclamation-circle"></i> <span class="menu-text">404 Page </span></a>
+            </li>
+            <li ng-class="{active: $state.includes('blank')}"><a ui-sref="blank" ng-click="showSubNav(0)"><i class="fa fa-file-o"></i> <span class="menu-text">Blank Page </span></a>
+            </li> -->
+        </ul>
+        <div class="section-heading" ng-show="advisior">Menus 4
+        </div>
+        <ul class="nav sidebar-nav" ng-show="advisior">
+            <li ng-class="{active: $state.includes('home')}"><a ui-sref="home" ng-click="showSubNav(0)"><i class="fa fa-home"></i> <span class="menu-text">Home</span></a>
+            </li>
+            <li ng-class="{active: $state.includes('profile')}"><a ui-sref="profile" ng-click="showSubNav(0)"><i class="fa fa-sign-in"></i> <span class="menu-text">Profile </span></a>
+            </li>
+            <li class="sidenav-dropdown" ng-class="{'show-subnav': showingSubNav=='quotation'}" ng-mouseover="hoverCancel()">
+                <a class="subnav-toggle" href="javascript:;" ng-click="showSubNav('quotation')"><i class="fa fa-pencil"></i> <span class="menu-text">Quotation<i class="fa fa-angle-down fa-angle-down  pull-right"</span></i></a>
+                <ul class="nav sidenav-sub-menu" collapse="showingSubNav!='quotation'">
+                    <li ng-class="{active: $state.includes('purchaseQuotation')}"><a ui-sref="purchaseQuotation"><i class="fa fa-pencil-square-o"></i>Purchase Quotation</a></li>
+                    <li ng-class="{active: $state.includes('saleQuotation')}"><a ui-sref="saleQuotation"><i class="fa fa-pencil-square-o"></i>Sale Quotation</a></li>
+                    <li ng-class="{active: $state.includes('remortgageQuotation')}"><a ui-sref="remortgageQuotation"><i class="fa fa-pencil-square-o"></i>Re-mortgage Quotation</a></li>
+                    <li ng-class="{active: $state.includes('salePurchaseQuotation')}"><a ui-sref="salePurchaseQuotation"><i class="fa fa-pencil-square-o"></i>Sale Purchase Quotation</a></li>
+                    <li ng-class="{active: $state.includes('cashbackQuotation')}"><a ui-sref="cashbackQuotation"><i class="fa fa-pencil-square-o"></i>Cashback Quotation</a></li>
+                </ul>
+            </li>
+            <li class="sidenav-dropdown" ng-class="{'show-subnav': showingSubNav=='myQuote'}" ng-mouseover="hoverCancel()">
+                <a class="subnav-toggle" href="javascript:;" ng-click="showSubNav('myQuote')"><i class="fa fa-pencil"></i> <span class="menu-text">My Quote<i class="fa fa-angle-down fa-angle-down  pull-right"</span></i></a>
+                <ul class="nav sidenav-sub-menu" collapse="showingSubNav!='myQuote'">
+                    <li ng-class="{active: $state.includes('purchaseQuote')}"><a ui-sref="purchaseQuote"><i class="fa fa-pencil-square-o"></i>Purchase</a></li>
+                    <li ng-class="{active: $state.includes('saleQuote')}"><a ui-sref="saleQuote"><i class="fa fa-pencil-square-o"></i>Sale</a></li>
+                    <li ng-class="{active: $state.includes('remortgageQuote')}"><a ui-sref="remortgageQuote"><i class="fa fa-pencil-square-o"></i>Re-mortgage</a></li>
+                    <li ng-class="{active: $state.includes('salePurchaseQuote')}"><a ui-sref="salePurchaseQuote"><i class="fa fa-pencil-square-o"></i>Sale Purchase</a></li>
+                    <li ng-class="{active: $state.includes('cashbackQuote')}"><a ui-sref="cashbackQuote"><i class="fa fa-pencil-square-o"></i>Cashback</a></li>
+                </ul>
+            </li>
+            <li ng-class="{active: $state.includes('tracking')}"><a ui-sref="tracking" ng-click="showSubNav(0)"><i class="fa fa-exclamation-circle"></i> <span class="menu-text">View Tracking </span></a>
+            </li>
+            <li ng-class="{active: $state.includes('firms')}"><a ui-sref="firms" ng-click="showSubNav(0)"><i class="fa fa-file-o"></i> <span class="menu-text">Panel Firms</span></a>
+            </li>
+            <li ng-class="{active: $state.includes('area')}"><a ui-sref="area" ng-click="showSubNav(0)"><i class="fa fa-file-o"></i> <span class="menu-text">Mi Area</span></a>
+            </li>
+        </ul>
+	</div>
+</div>

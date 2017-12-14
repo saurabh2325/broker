@@ -1,0 +1,80 @@
+<pageheader pagename="Cashback Quote" subtitle="{{subtitle}}"></pageheader>
+<div class="conter-wrapper">
+    <div class="row">
+        <div class="col-md-3 home-panel">
+            <stats bgclass="danger" icon="eye" value="{{totalAdvisor || 0}}" text="Advisor"></stats>
+        </div>
+        <div class="col-md-3 home-panel">
+            <stats bgclass="info" icon="calculator" value="12,34" text="Net Revenue"></stats>
+        </div>
+        <div class="col-md-3 home-panel">
+            <stats bgclass="warning" icon="bar-chart" value="6,123" text="Total Sales"></stats> 
+        </div>
+        <div class="col-md-3 home-panel">
+            <stats bgclass="success" icon="list" value="5,653" text="Total Sales"></stats> 
+        </div>     
+    </div>
+    <div class="slide-animate-container">
+        <div class="slide-animate"  style="height:auto;"  ng-include="templateUrl">
+        </div>   
+    </div>
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Quotation List</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table_overflow_div">
+                <table class="table table-condensed table-striped">
+                    <thead class="bg-warning">
+                        <tr>
+                            <th>#</th>
+                            <th>Code Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact No</th>
+                            <th>Conveyancer</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>PUR-78965</td>
+                            <td>Davisons (Birmingham)</td>
+                            <td>Davisons@gmail.com</td>
+                            <td>098-569874321</td>
+                            <td>Birmingham</td>  
+                            <td>
+                                <button type="button" class="btn btn-success btn-xs" ng-click="viewPanel(data._id)"><i class="fa fa-eye"></i></button>
+                                <button type="button" class="btn btn-warning btn-xs" ng-click="editPanel(data._id)"><i class="fa fa-pencil-square-o"></i></button>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="deleteAdvisor(data._id)"><i class="fa fa-trash-o"></i></button>
+                            </td>
+                        </tr>
+                        <!-- <tr ng-repeat="data in advisorListData">
+                            <td>{{$index + 1}}</td>
+                            <td>{{data.uid}}</td>
+                            <td>{{data.first_name}}&nbsp;{{user.last_name}}</td>
+                            <td>{{data.email}}</td>
+                            <td>{{data.mobile_contact_no}}</td>
+                            <td>
+                                <span>
+                                    <i ng-if="data.status === 0" class="fa fa-check"></i>
+                                    <i ng-if="data.status !== 0" class="fa fa-remove"></i>
+                                </span>
+                            </td>  
+                            <td>
+                                <button type="button" class="btn btn-success btn-xs" ng-click="viewPanel(data._id)"><i class="fa fa-eye"></i></button>
+                                <button type="button" class="btn btn-warning btn-xs" ng-click="editPanel(data._id)"><i class="fa fa-pencil-square-o"></i></button>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="deleteAdvisor(data._id)"><i class="fa fa-trash-o"></i></button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="line-h-ex"></div>
+            <div class="clearfix pull-right no-m-b">
+                <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul> 
+            </div>			
+        </div>
+    </div>
+</div>

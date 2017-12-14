@@ -1,0 +1,81 @@
+<pageheader pagename="Purchase Quatation" subtitle="{{subtitle}}"></pageheader>
+<div class="conter-wrapper">
+    <div class="row">
+        <div class="col-md-3 home-panel">
+            <stats bgclass="danger" icon="eye" value="{{totalQuatation || 0}}" text="Qutation"></stats>
+        </div>
+        <div class="col-md-3 home-panel">
+            <stats bgclass="info" icon="calculator" value="12,34" text="Net Revenue"></stats>
+        </div>
+        <div class="col-md-3 home-panel">
+            <stats bgclass="warning" icon="bar-chart" value="6,123" text="Total Sales"></stats> 
+        </div>
+        <div class="col-md-3 home-panel">
+            <stats bgclass="success" icon="list" value="5,653" text="Total Sales"></stats> 
+        </div>     
+    </div>
+    <div class="slide-animate-container">
+        <div class="slide-animate"  style="height:auto;"  ng-include="templateUrl">
+        </div>   
+    </div>
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Quotation List:
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger" ng-click="addPanel()"><i class="fa fa-plus"></i>&nbsp;&nbsp;Add New</button>
+                    <button type="button" class="btn btn-danger" ng-click="getAllUsers()"><i class="fa fa-refresh"></i>&nbsp;&nbsp;Refresh</button>
+                </div>
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="table_overflow_div">
+                <table class="table table-condensed table-striped">
+                    <thead class="bg-warning">
+                        <tr>
+                            <th>#</th>
+                            <th>Quotation Id</th>
+                            <th>Date</th>
+                            <th>Branch</th>
+                            <th>Applicant</th>
+                            <th>Conveyancer</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="(key, value) in quotationData.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage)) | filter:searchText">
+                            <td>{{$index + 1}}</td>
+                            <td>{{value.uid}}</td>
+                            <td>{{value.first_name}}&nbsp;{{user.last_name}}</td>
+                            <td>{{value.email}}</td>
+                            <td>{{value.mobile_contact_no}}</td>
+                            <td>
+                                <span>
+                                    <i ng-if="data.status === 0" class="fa fa-check"></i>
+                                    <i ng-if="data.status !== 0" class="fa fa-remove"></i>
+                                </span>
+                            </td>  
+                            <td>
+                                <button type="button" class="btn btn-success btn-xs" ng-click="viewPanel(value._id)"><i class="fa fa-eye"></i></button>
+                                <button type="button" class="btn btn-warning btn-xs" ng-click="editPanel(value._id)"><i class="fa fa-pencil-square-o"></i></button>
+                                <button type="button" class="btn btn-danger btn-xs" ng-click="deleteAdvisor(value._id)"><i class="fa fa-trash-o"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="line-h-ex"></div>
+            <div class="clearfix pull-left no-m-b">
+                <div class="form-group tbl_select_size">
+                    View &nbsp;<select class="" name="vendor_state" ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+                        <option value="">Select</option>
+                        <option ng-repeat="data in pageSize" value="{{data.size}}">{{data.size}}</option>
+                    </select>&nbsp;records at a time.
+                </div>    
+            </div>
+            <div class="clearfix pull-right no-m-b">
+                <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="currentPage" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></ul> 
+            </div>			
+        </div>
+    </div>
+</div>

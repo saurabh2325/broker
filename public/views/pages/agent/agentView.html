@@ -1,0 +1,82 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading" style="padding: 10px 20px;">
+        <h3 class="panel-title"> User Detail		  
+            <div class="pull-right">
+                <button type="button" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i></button>
+                <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+            </div>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="col-md-12 form-body"> 
+            <div class="row">  
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>City*</label>
+                        <select class="form-control" ng-model="appointments.city_id" ng-change="getWorkshop(appointments.city_id, aptForm)" name="city_id" required>
+                            <option value="">Select City</option>
+                            <option ng-repeat="cityList in city" value="{{cityList._id}}">{{cityList.cityName}}</option>
+                        </select>
+                        <p class="help-block" ng-show="(!aptForm.city_id.$pristine && aptForm.city_id.$error.required) || (aptForm.$submitted && aptForm.city_id.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Work Shop</label>
+                        <select class="form-control" ng-model="appointments.partner_id" name="partner_id" required>
+                            <option value="">Select Workshop</option>
+                            <option ng-repeat="workshopList in Workshop" value="{{workshopList._id}}">{{workshopList.name}}</option>
+                        </select>
+                        <p class="help-block" ng-show="(!aptForm.partner_id.$pristine && aptForm.partner_id.$error.required) || (aptForm.$submitted && aptForm.partner_id.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div> 
+                    <div class="form-group">
+                        <label>Vehicle Number*</label>
+                        <input type="text" class="form-control" ng-model ="appointments.vehicle_num" name="
+                        vehicle_num" ng-change="getVehicleData(appointments.vehicle_num = appointments.vehicle_num.toUpperCase())" placeholder="Enter Vehicle Number" required>
+                        <p class="help-block" ng-show="(!aptForm.vehicle_num.$pristine && aptForm.vehicle_num.$error.required) || (aptForm.$submitted && aptForm.vehicle_num.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div>           
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Vehicle Brand*</label>
+                        <input type="text" class="form-control" ng-model ="appointments.vehicle_brand" name="vehicle_brand" placeholder="Enter Vehicle Brand" required>
+                        <p class="help-block" ng-show="(!aptForm.vehicle_brand.$pristine && aptForm.vehicle_brand.$error.required) || (aptForm.$submitted && aptForm.vehicle_brand.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Model*</label>
+                        <input type="text" class="form-control" ng-model ="appointments.vehicle_model" name="vehicle_model" placeholder="Enter Vehicle Model*" required>
+                        <p class="help-block" ng-show="(!aptForm.vehicle_model.$pristine && aptForm.vehicle_model.$error.required) || (aptForm.$submitted && aptForm.vehicle_model.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Appointment Date</label> 
+                        <input type="date" class="form-control" ng-model="appointments.appointment_date" name="appointment_date" required />
+                        <p class="help-block" ng-show="(!aptForm.appointment_date.$pristine && aptForm.appointment_date.$error.required) || (aptForm.$submitted && aptForm.appointment_date.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div>                
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Vehicle Brand*</label>
+                        <input type="text" class="form-control" ng-model ="appointments.vehicle_brand" name="vehicle_brand" placeholder="Enter Vehicle Brand" required>
+                        <p class="help-block" ng-show="(!aptForm.vehicle_brand.$pristine && aptForm.vehicle_brand.$error.required) || (aptForm.$submitted && aptForm.vehicle_brand.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Vehicle Model*</label>
+                        <input type="text" class="form-control" ng-model ="appointments.vehicle_model" name="vehicle_model" placeholder="Enter Vehicle Model*" required>
+                        <p class="help-block" ng-show="(!aptForm.vehicle_model.$pristine && aptForm.vehicle_model.$error.required) || (aptForm.$submitted && aptForm.vehicle_model.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Appointment Date</label> 
+                        <input type="date" class="form-control" ng-model="appointments.appointment_date" name="appointment_date" required />
+                        <p class="help-block" ng-show="(!aptForm.appointment_date.$pristine && aptForm.appointment_date.$error.required) || (aptForm.$submitted && aptForm.appointment_date.$error.required)" style="color: #c70505;">This field is required</p>
+                    </div>                
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panal-body-footer">
+                <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+                <button class="btn btn-primary" ng-click="update()">Update</button>
+            </div>
+        </div>        
+    </div>
+</div>
+   

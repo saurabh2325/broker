@@ -1,0 +1,267 @@
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">Advisor Details: 	  
+                <div class="pull-right">
+                    <!-- <button type="button" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i></button> -->
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+                </div>
+            </h4>
+        </div>
+        <div class="panel-body">
+            <div class="row show-hide-message" ng-show= successMsg>
+                <div class="alert alert-success">{{successMsg}}</div>
+            </div>
+            <div class="row show-hide-message" ng-show= errorMsg>
+                <div class="alert alert-danger">{{errorMsg}}</div>
+            </div>
+            <form name="advisorForm" id="advisorForm" novalidate>
+                <div class="form-body">
+                    <div class="row">
+                        <uib-tabset class="primary-tabs" style="background-color: #eee !important; ">
+                            <uib-tab ng-attr-active="general">
+                                <uib-tab-heading>General</uib-tab-heading>
+                                <div class="col-md-6">
+                                    <h5 class="title-lbl">Basic information:</h5>
+                                    <div class="form-group">
+                                        <label>Advisor Code Id*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                        <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Name</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Phone No.</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>First Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                        <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>             
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="title-lbl">Basic information:</h5>
+                                    <div class="form-group">
+                                        <label>Advisor Code Id*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                        <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Name</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Phone No.</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>First Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                        <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>             
+                                </div>
+                            </uib-tab>
+                            <uib-tab>
+                                <uib-tab-heading>Test1</uib-tab-heading>
+                                <div class="col-md-6">
+                                    <h5 class="title-lbl">Basic information:</h5>
+                                    <div class="form-group">
+                                        <label>Advisor Code Id*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                        <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Name</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Phone No.</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                        <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>             
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="title-lbl">Basic information:</h5>
+                                    <div class="form-group">
+                                        <label>Advisor Code Id*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                        <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>First Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                        <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>             
+                                </div>
+                            </uib-tab>
+                            <uib-tab >
+                                <uib-tab-heading>Test2</uib-tab-heading>
+                                <div class="col-md-6">
+                                    <h5 class="title-lbl">Basic information:</h5>
+                                    <div class="form-group">
+                                        <label>Company Phone No.</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>First Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                        <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>             
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="title-lbl">Basic information:</h5>
+                                    <div class="form-group">
+                                        <label>Advisor Code Id*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                        <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Name</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Phone No.</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>First Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                        <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>             
+                                </div>
+                            </uib-tab>
+                            <uib-tab >
+                                <uib-tab-heading>Test3</uib-tab-heading>
+                                <div class="col-md-6">
+                                    <h5 class="title-lbl">Basic information:</h5>
+                                    <div class="form-group">
+                                        <label>Advisor Code Id*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                        <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Name</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Phone No.</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>First Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                        <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>             
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="title-lbl">Basic information:</h5>
+                                    <div class="form-group">
+                                        <label>Advisor Code Id*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                        <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Name</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Company Phone No.</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>First Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Last Name*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                        <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email*</label>
+                                        <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                        <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                    </div>             
+                                </div>
+                            </uib-tab>
+                        </uib-tabset>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panal-body-footer">
+            <button class="btn btn-default" ng-click="closePanel()">Cancel</button>
+            <button class="btn btn-primary" ng-click="createAdvisor(advisorForm.$valid, advisorForm)">Save</button>
+        </div>       
+    </div>
+        

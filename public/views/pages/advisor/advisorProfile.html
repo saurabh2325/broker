@@ -1,0 +1,160 @@
+<pageheader pagename="Profile" subtitle="{{subtitle}}"></pageheader>
+<div class="conter-wrapper">
+    <div class="slide-animate-container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Profile Details :		  
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i></button>
+                        <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+                    </div>
+                </h3>
+            </div>
+            <form name="advisorForm" id="advisorForm" novalidate>
+                <div class="panel-body">
+                    <growl-notifications>
+                        <growl-notification ng-if="successMsg" class="growl-primary fading">
+                            <a href="javascript:;" ng-click="$growlNotification.remove()" class="close"><i class="fa fa-times"></i></a>
+                            {{successMsg}}
+                        </growl-notification>
+                        <growl-notification ng-if="errorMsg" class="growl-error fading">
+                            <a href="javascript:;" ng-click="$growlNotification.remove()" class="close"><i class="fa fa-times"></i></a>
+                            {{errorMsg}}
+                        </growl-notification>
+                    </growl-notifications>
+                    <div class="form-body">
+                        <div class="quote-section_box">
+                            <div class="col-md-12">
+                                <h3 class="title-lbl">Company Details</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Company Name</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.company_name" name="company_name" placeholder="Company name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Company Phone No.</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="quote-section_box">
+                            <div class="col-md-12">
+                                <h3 class="title-lbl">Company Address Details</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="description">Building name/number:</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.number" name="number" placeholder="Building name/number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Area:</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.area" name="area" placeholder="Area">
+                                </div>
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.country" name="country" placeholder="Country">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="description">Street:</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.street" name="street" placeholder="Street">
+                                </div>
+                                <div class="form-group">
+                                    <label>Town/City</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.city" name="city" placeholder="City">
+                                </div>
+                                <div class="form-group">
+                                    <label>Postal Code</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.address.zip" name="zip" placeholder="Postal code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="quote-section_box">
+                            <div class="col-md-12">
+                                <h3 class="title-lbl">Branch Logo</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="file" class="form-control" file-Model="myFile" name="image" placeholder="choose logo">
+                                    <button type="button" class="btn btn-primary" ng-click="uploadLogo()">Upload File</button>
+                                    <div class="checkbox note">
+                                      <label>
+                                          <input type="checkbox" ng-model='advisorData.use_logo'> Use Logo on quotes?
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group note">
+                                    <label>**Please ensure your logo is no larger than 80px high and 200px wide.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-body">
+                        <div class="quote-section_box">
+                            <div class="col-md-12">
+                                <h3 class="title-lbl">User Details</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Code Id*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.uid" name="uid" placeholder="advisor code Id" ng-disabled="true" required>
+                                    <p class="help-block" ng-show="(!advisorForm.uid.$pristine && advisorForm.uid.$error.required) || (advisorForm.$submitted && advisorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>First Name*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.first_name" name="first_name" placeholder="First name" required>
+                                    <p class="help-block" ng-show="(!advisorForm.first_name.$pristine && advisorForm.first_name.$error.required) || (advisorForm.$submitted && advisorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.last_name" name="last_name" placeholder="Last name" required>
+                                    <p class="help-block" ng-show="(!advisorForm.last_name.$pristine && advisorForm.last_name.$error.required) || (advisorForm.$submitted && advisorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Territory*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.territory" name="territory" placeholder="Territory/Area of working" required>
+                                    <p class="help-block" ng-show="(!advisorForm.territory.$pristine && advisorForm.territory.$error.required) || (advisorForm.$submitted && advisorForm.territory.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div> 
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.email" name="email" placeholder="Email address" required>
+                                    <p class="help-block" ng-show="(!advisorForm.email.$pristine && advisorForm.email.$error.required) || (advisorForm.$submitted && advisorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Work Phone No</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.work_contact_no" name="work_contact_no" placeholder="Work phone no">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label>Mobile No*</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.mobile_contact_no" name="mobile_contact_no" placeholder="Mobile no" required>
+                                    <p class="help-block" ng-show="(!advisorForm.mobile_contact_no.$pristine && advisorForm.mobile_contact_no.$error.required) || (advisorForm.$submitted && advisorForm.mobile_contact_no.$error.required)" style="color: #c70505;">This field is required</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Bank Details</label>
+                                    <input type="text" class="form-control" ng-model ="advisorData.bank_detail" name="bank_detail" placeholder="Bank detail">
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panal-body-footer">
+                    <a ui-sref="home"><button class="btn btn-default">Main Menu</button></a>
+                    <button class="btn btn-primary" ng-click="updateProfile(advisorForm.$valid, advisorForm)">Update</button>
+                </div>
+            </form>
+        </div>   
+    </div>
+</div>

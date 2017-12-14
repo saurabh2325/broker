@@ -1,0 +1,187 @@
+<div id="quote">
+    <div class="panel panel-default">
+       <div class="panel-heading">
+          <h5 class="panel-title">
+             My Quote 2/2   
+             <div class="pull-right">
+                    <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+                    <button type="button" class="btn btn-info btn-xs" ng-click="previousPanel()"><i class="fa fa-arrow-left"></i></button>
+             </div>
+          </h5>
+       </div>
+       <form name="advisorForm" id="advisorForm" novalidate>
+           <div class="panel-body">
+              <div class="row show-hide-message" ng-show= successMsg>
+                 <div class="alert alert-success">{{successMsg}}</div>
+              </div>
+              <div class="row show-hide-message" ng-show= errorMsg>
+                 <div class="alert alert-danger">{{errorMsg}}</div>
+              </div>
+              <div class="form-body">
+                <div class="quote-section_box add_info_label">
+                    <div class="col-md-12">
+                      <h5 class="title-lbl">Additional Information:</h5>
+                      <div class="form-group">
+                        <label>What is the Tenure for Purchase?</label>
+                        <div class="radio">
+                          <label>
+                              <input type="radio" ng-model='advisorData.status' value= "0"> Freehold
+                              <input type="radio" ng-model='advisorData.status' value= "1"> leasehold
+                              <input type="radio" ng-model='advisorData.status' value= "1"> Shared Ownership/Homebuy
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Is it a Buy to Let?</label>
+                        <div class="radio">
+                          <label>
+                              <input type="radio" ng-model='advisorData.status' value= "0"> N/A
+                              <input type="radio" ng-model='advisorData.status' value= "1"> Buy to Let
+                              <input type="radio" ng-model='advisorData.status' value= "1"> Ltd Co BTL
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Do any of the following apply?</label>
+                        <div class="radio">
+                          <label>
+                              <input type="checkbox" ng-model='advisorData.status' value= "0"> Gifted Deposit
+                              <input type="checkbox" ng-model='advisorData.status' value= "1"> H2B Equity Loan 
+                              <input type="checkbox" ng-model='advisorData.status' value= "1"> H2B ISA
+                              <input type="checkbox" ng-model='advisorData.status' value= "1"> New Build
+                              <input type="checkbox" ng-model='advisorData.status' value= "1"> Right to Buy
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Is it one of these lenders?</label>
+                        <div class="radio">
+                          <label>
+                              <input type="radio" ng-model='advisorData.status' value= "0"> N/A
+                              <input type="radio" ng-model='advisorData.status' value= "1"> Precise
+                              <input type="radio" ng-model='advisorData.status' value= "1"> Paragon
+                              <input type="radio" ng-model='advisorData.status' value= "1"> Mortgage Trust
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="quote-section_box">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <h5 class="title-lbl">Select your Introducer Fee:</h5>
+                      <div class="form-group">
+                       <label style="width: 100%;">Referral Fee / Commision (Ex VAT)</label>
+                       <div class="radio">
+                          <label>
+                              <input type="radio" ng-model='advisorData.status' value= "0"> $0
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $25
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $50
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $75
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $100
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $125
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $150
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $175
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $200
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $225
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $250
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $275
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $300
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $325
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $350
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $375
+                              <input type="radio" ng-model='advisorData.status' value= "1"> $400
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="quote-section_box">
+                    <div class="col-md-12">
+                       <div class="form-group">
+                            <h5 class="title-lbl">Select Conveyancer</h5>
+                            <div class="form-group">
+                              <label>Quotation Date 13/11/17 valid until 20/11/17</label>
+                              <div class="table_overflow_div">
+                                <table class="table table-condensed table-striped">
+                                  <thead class="bg-warning">
+                                      <tr>
+                                          <th>Conveyancer/Location</th>
+                                          <th>Total Inc VAT & Disbursement</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>
+                                        <div class="radio">
+                                          <input type="radio" name=""> Davisons (Birmingham)
+                                        </div>
+                                      </td>
+                                      <td>$1,273.00 (Including a Legal Fee of $435.00)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="radio">
+                                          <input type="radio" name=""> Davisons (Birmingham)
+                                        </div>
+                                      </td>
+                                      <td>$1,273.00 (Including a Legal Fee of $435.00)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="radio">
+                                          <input type="radio" name=""> Davisons (Birmingham)
+                                        </div>
+                                      </td>
+                                      <td>$1,273.00 (Including a Legal Fee of $435.00)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="radio">
+                                          <input type="radio" name=""> Davisons (Birmingham)
+                                        </div>
+                                      </td>
+                                      <td>$1,273.00 (Including a Legal Fee of $435.00)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="radio">
+                                          <input type="radio" name=""> Davisons (Birmingham)
+                                        </div>
+                                      </td>
+                                      <td>$1,273.00 (Including a Legal Fee of $435.00)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <div class="radio">
+                                          <input type="radio" name=""> Davisons (Birmingham)
+                                        </div>
+                                      </td>
+                                      <td>$1,273.00 (Including a Legal Fee of $435.00)</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                         
+                       </div>
+                    </div>
+                </div>
+              </div>
+           </div>
+           <div class="panal-body-footer  panal-body-footer_modified">
+            <div class="pull-left">
+              <button class="btn btn-default" ng-click="closePanel()">Main Menu</button>
+              <button class="btn btn-primary" ng-click="previousPanel(advisorForm.$valid, advisorForm)">Previous</button>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-primary" ng-click="previousPanel(advisorForm.$valid, advisorForm)">Get Quote</button>
+              <button class="btn btn-primary" ng-click="previousPanel(advisorForm.$valid, advisorForm)">Email Quote</button>
+              <button class="btn btn-primary" ng-click="previousPanel(advisorForm.$valid, advisorForm)">Save</button>
+              <button class="btn btn-primary" ng-click="previousPanel(advisorForm.$valid, advisorForm)">Proceed to Instruction</button>
+            </div>
+           </div>
+       </form>       
+    </div>
+</div>

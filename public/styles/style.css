@@ -1,0 +1,309 @@
+.pageheader-title{
+    float: left; 
+    font-size: 18px; 
+    line-height: 20px;
+}
+.pageheader-subtitle{
+    float: left; 
+    font-size: 15px; 
+    line-height: 20px;
+    margin-top: 2px;
+}
+
+/*.panal-body-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid #06c5ac;
+}*/
+.panal-body-footer .btn {
+    font-size: 13px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.form-body{
+    /*margin-bottom: 20px;*/
+}
+
+/* add edit view panel animation css */
+
+.slide-animate.ng-enter, 
+.slide-animate.ng-leave {
+  transition: all linear 0.35s;
+  
+}    
+.slide-animate.ng-enter {
+  opacity:0;
+  
+}
+.slide-animate.ng-enter.ng-enter-active {
+  opacity:1;
+}    
+.slide-animate.ng-leave {
+  opacity:1;
+  height: 0;
+}
+.slide-animate.ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+/* view page css */
+
+.second_text_right{
+  width: 100%;
+}
+.view_left_table{
+    width: 90%;
+}
+.view_left_table .second_text_right td:nth-child(1){
+  max-width: 63px !important;
+  padding-right: 0px;
+}  
+.view_right_table{
+    width: 100%;
+}
+.view_left_table_td{
+    vertical-align: top;
+}
+.view_right_table_td{
+    width: 50%;
+    vertical-align: top;
+}
+.second_text_right td{
+    vertical-align: top;
+    padding: 5px 5px;
+}
+
+.custom_table tbody tr td, .custom_table tbody tr th{
+    border-top: 0px solid transparent !important;
+        padding: 3px !important;
+}
+
+.suspand_box{
+    height: 385px;
+    position: relative;
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.box_hover{
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.box_hover:hover{
+    text-decoration: none;
+    transition: 0.2s;
+    background: rgb(236, 232, 232);
+    background-image: url(../images/bg-strips-light.png);
+    background-repeat: repeat;
+}
+
+
+/*custom css 15/11/2017*/
+.panal-body-footer {
+    padding: 5px 10px 5px;
+    text-align: right;
+    border-top: 1px solid #06c5ac;
+}
+
+.login_form_control{
+    width:100% !important;
+}
+
+
+/*Custom Css 06/12/2017*/
+.quote-section_box{
+    display: inline-table;
+    width: 100%;
+    background: #e0e0e063;
+    padding: 10px 0px 5px;
+    border: 1px solid #a9a9a9c7;
+    margin-bottom: 5px;
+}
+#quote  .quote-section_box.titlee .form-control{
+    width: 100%;
+    min-width: 100%;
+}
+.head_line{
+    width: 100%;
+    display: inline-block;
+}
+#quote  .radio,#quote  .checkbox{
+    width: auto;
+}
+#quote .radio input,#quote .checkbox input{
+    position: static;
+    margin-left: 5px;
+    vertical-align: text-top;
+    margin-right: 0px;
+}
+#quote .radio label{
+    padding-left: 0px;
+}
+#quote  .add_info_label label{
+    min-width: 210px;
+}
+.name_table th{
+    border: 0px !important;
+    line-height: 1.42857143;
+    color: #555;
+    font-weight: bold;
+    padding:5px 5px 0px !important;
+}
+.name_table td{
+    border: 0px !important;
+    padding:5px 5px 0px !important;
+}
+.name_table td .radio label,.name_table td .checkbox label{
+        padding-left: 5px;
+}
+.name_table{
+    margin-bottom: 0px;
+}
+.name_table th:nth-child(1),.name_table td:nth-child(1){
+    min-width: 150px;
+    width: 10%;
+}
+.name_table th:nth-child(2),.name_table td:nth-child(2){
+    min-width: 150px;
+    width: 10%;
+}
+.name_table th:nth-child(3),.name_table td:nth-child(3){
+    min-width: 250px;
+    width: 20%;
+}
+.name_table th:nth-child(4),.name_table td:nth-child(4){
+    min-width: 250px;
+    width: 20%;
+}
+.name_table th:nth-child(5),.name_table td:nth-child(5){
+    width: 40%;
+}
+.panal-body-footer_modified{
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 0px;
+}
+.quote-section_box input[type="file"]{
+    padding: 1px;
+        margin-bottom: 5px;
+}
+.note label{
+    width: 100%;
+        font-weight: bold;
+}
+.full_width{
+    width: 100%;
+    display: inline-block;
+}
+
+
+/*ineer page tab css*/
+.inner_page_tab.primary-tabs li a {
+    color: #333;
+    /*background: #f3f3f3;*/
+    background: lightgray;
+    border-bottom: 1px solid #06c5ac;
+        padding: 6px 9px;
+}
+.inner_page_tab.primary-tabs li.active a,.inner_page_tab.primary-tabs li.active a:focus{
+    border: 1px solid #06c5ac;
+    border-bottom-color: #06c5ac;
+    background: #06c5ac !important;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 01px;
+    color: #fff !important;
+}
+
+/*view page css*/
+.quote-section_box .custom_table tr td:nth-child(2) span {
+    background-color: #fff;
+    padding: 3px 5px;
+    display: block;
+}
+.custom_table tr td:nth-child(2) span {
+    background-color: #eee;
+    padding: 3px 5px;
+    display: block;
+}
+
+
+/*register page css*/
+#register_page .login-right{
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+}
+#register_page .login-wrap .login-right .heading {
+    font-size: 21px;
+    padding: 0px;
+    text-align: center;
+} 
+#register_page .submit{
+    border-radius: 30px 30px 30px 30px;
+    border: solid 2px #06c5ac;
+    border-left: 2px solid #06c5ac;
+    margin: 0px auto;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#register_page .full_width h5{
+    text-align: center;
+}
+#register_page .full_width h3{
+    display: inline-block;
+}
+
+/*home page css*/
+.home-page {
+    margin:0px; 
+}
+.home-page > .row{
+    border-spacing: 15px 5px;
+}
+.home-page > .row > [class*="col-"]{
+    border-radius: 0px;
+}
+.home-page .panel-heading {
+    padding: 10px 20px 6px;
+}
+.home_box{
+    text-align: center;
+    color: #fff;
+}
+.home_box p{
+    color: #333;
+}
+.home_box .striped-bg{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.home_box .striped-bg h3{
+    margin:5px 0px;
+        font-size: 22px;
+}
+.home_box .striped-bg h4{
+    margin:0px 0px;
+}
+.home_box .striped-bg .bg-default{
+    background:#fff;
+    margin-top: 10px;
+    margin-bottom: 0px; 
+}
+.home_box .striped-bg .bg-default h4{
+    color: #333;
+}
+.admin_features h3{
+    color: #000;
+    text-align: left;
+    margin: 15px 0px;
+}
+.bottom_box .home_box .striped-bg{
+    margin: 10px 0px;
+}
+
+.has-error {
+    border-color: #a94442;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #a94442;
+}

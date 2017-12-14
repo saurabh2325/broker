@@ -1,0 +1,127 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Visitor Details :		  
+            <div class="pull-right">
+                <!-- <button type="button" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i></button> -->
+                <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+            </div>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="row show-hide-message" ng-show= successMsg>
+            <div class="alert alert-success">{{successMsg}}</div>
+        </div>
+        <div class="row show-hide-message" ng-show= errorMsg>
+            <div class="alert alert-danger">{{errorMsg}}</div>
+        </div>
+        <form name="visitorForm" id="visitorForm" novalidate>
+            <div class="form-body">
+                <h3 class="title-lbl">Basic Information</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Visitor Id*</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.uid" name="uid" placeholder="visitor code Id" ng-disabled="true" required>
+                            <p class="help-block" ng-show="(!visitorForm.uid.$pristine && visitorForm.uid.$error.required) || (visitorForm.$submitted && visitorForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>First Name*</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.first_name" name="first_name" placeholder="First name" required>
+                            <p class="help-block" ng-show="(!visitorForm.first_name.$pristine && visitorForm.first_name.$error.required) || (visitorForm.$submitted && visitorForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name*</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.last_name" name="last_name" placeholder="Last name" required>
+                            <p class="help-block" ng-show="(!visitorForm.last_name.$pristine && visitorForm.last_name.$error.required) || (visitorForm.$submitted && visitorForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Email*</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.email" name="email" placeholder="Email address" required>
+                            <p class="help-block" ng-show="(!visitorForm.email.$pristine && visitorForm.email.$error.required) || (visitorForm.$submitted && visitorForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Work Phone No</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.work_contact_no" name="work_contact_no" placeholder="Work phone no">
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile No*</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.mobile_contact_no" name="mobile_contact_no" placeholder="Mobile no" required>
+                            <p class="help-block" ng-show="(!visitorForm.mobile_contact_no.$pristine && visitorForm.mobile_contact_no.$error.required) || (visitorForm.$submitted && visitorForm.mobile_contact_no.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.company_name" name="company_name" placeholder="Company name">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Company Phone No.</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                        </div>
+                        <div class="form-group">
+                            <label>Occupation</label>
+                            <select class="form-control" ng-model="visitorData.occupation" name="occupation">
+                                <option value="">--Select--</option>
+                                <option value="Advisor/Introducer">Advisor/Introducer</option>
+                                <option value="Solicitor">Solicitor</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div> 
+                        <div class="form-group">
+                            <label>Territory</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.territory" name="territory" placeholder="Territory/Area of working">
+                        </div>          
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea class="form-control" rows="3" id="description" ng-model ="visitorData.description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Building name/number:</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.address.number" name="number" placeholder="Building name/number">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Street:</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.address.street" name="street" placeholder="Street">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Area:</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.address.area" name="area" placeholder="Area">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.address.country" name="country" placeholder="Country">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Town/City</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.address.city" name="city" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input type="text" class="form-control" ng-model ="visitorData.address.zip" name="zip" placeholder="Postal code">  
+                        </div> 
+                        <div class="form-group">
+                            <label>Status</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model='visitorData.status' value= "0"> Active
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                </label>
+                                <label>
+                                    <input type="radio" ng-model='visitorData.status' value= "1">Inactive
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panal-body-footer">
+        <button class="btn btn-default" ng-click="closePanel()">Cancel</button>
+        <button class="btn btn-primary" ng-click="createVisitor(visitorForm.$valid, visitorForm)">Save</button>
+    </div>       
+</div>
+        

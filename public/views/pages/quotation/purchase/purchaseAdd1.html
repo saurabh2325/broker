@@ -1,0 +1,141 @@
+<div id="quote">
+    <div class="panel panel-default">
+       <div class="panel-heading">
+          <h5 class="panel-title">
+             Create Purchase Quote 2/2   
+             <div class="pull-right">
+                <a ui-sref="home"><button class="btn btn-info btn-xs"><i class="fa fa-home"></i></button></a>
+                <button type="button" class="btn btn-danger btn-xs" ng-click="previousPanel()"><i class="fa fa-arrow-left"></i></button>
+             </div>
+          </h5>
+       </div>
+       <form name="quoteForm" id="quoteForm" novalidate>
+           <div class="panel-body">
+              <div class="form-body">
+                <div class="quote-section_box add_info_label">
+                    <div class="col-md-12">
+                      <h5 class="title-lbl">Additional Information:</h5>
+                      <div class="form-group">
+                        <label>What is the Tenure for Purchase?</label>
+                        <div class="radio">
+                          <label>
+                              <input type="radio" ng-model='quoteData.tenure' value= "Freehold"> Freehold
+                              <input type="radio" ng-model='quoteData.tenure' value= "leasehold"> leasehold
+                              <input type="radio" ng-model='quoteData.tenure' value= "Shared Ownership/Homebuy"> Shared Ownership/Homebuy
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Is it a Buy to Let?</label>
+                        <div class="radio">
+                          <label>
+                              <input type="radio" ng-model='quoteData.buy_to_let' value= "N/A"> N/A
+                              <input type="radio" ng-model='quoteData.buy_to_let' value= "Buy to Let"> Buy to Let
+                              <input type="radio" ng-model='quoteData.buy_to_let' value= "Ltd Co BTL"> Ltd Co BTL
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Do any of the following apply?</label>
+                        <div class="radio">
+                          <label>
+                              <input type="checkbox" ng-model='quoteData.gifted_deposit'> Gifted Deposit
+                              <input type="checkbox" ng-model='quoteData.h2b_equity_loan'> H2B Equity Loan 
+                              <input type="checkbox" ng-model='quoteData.h2b_isa'> H2B ISA
+                              <input type="checkbox" ng-model='quoteData.new_build'> New Build
+                              <input type="checkbox" ng-model='quoteData.right_to_buy'> Right to Buy
+                          </label>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>Is it one of these lenders?</label>
+                        <div class="radio">
+                          <label>
+                              <input type="radio" ng-model='quoteData.lenders' value= "N/A"> N/A
+                              <input type="radio" ng-model='quoteData.lenders' value= "Precise"> Precise
+                              <input type="radio" ng-model='quoteData.lenders' value= "Paragon"> Paragon
+                              <input type="radio" ng-model='quoteData.lenders' value= "Mortgage Trust"> Mortgage Trust
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="quote-section_box">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <h5 class="title-lbl">Select your Introducer Fee:</h5>
+                      <div class="form-group">
+                       <label style="width: 100%;">Referral Fee / Commision (Ex VAT)</label>
+                       <div class="radio">
+                          <label>
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "0"> $0
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "25"> $25
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "50"> $50
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "75"> $75
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "100"> $100
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "125"> $125
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "150"> $150
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "175"> $175
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "200"> $200
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "225"> $225
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "250"> $250
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "275"> $275
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "300"> $300
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "325"> $325
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "350"> $350
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "375"> $375
+                              <input type="radio" ng-model='quoteData.introducer_Fee' value= "400"> $400
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="quote-section_box">
+                    <div class="col-md-12">
+                       <div class="form-group">
+                            <h5 class="title-lbl">Select Conveyancer</h5>
+                            <div class="form-group">
+                              <label>Quotation Date {{quoteData.create_date | date: "MM-dd-yyyy"}} valid until {{quoteData.valid_date | date: "MM-dd-yyyy"}}</label>
+                              <div class="table_overflow_div">
+                                <table class="table table-condensed table-striped">
+                                  <thead class="bg-warning">
+                                      <tr>
+                                          <th>Conveyancer/Location</th>
+                                          <th>Total Inc VAT & Disbursement</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr ng-repeat=" (key,value) in conveyancerData">
+                                      <td>
+                                        <div class="radio">
+                                          <input type="radio" ng-model="$parent.quoteData.conveyancer_id" value="{{value.conveyancer_id}}">{{value.conveyancer_name}}
+                                        </div>
+                                      </td>
+                                      <td>{{value.conveyancer_fee}}</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+              </div>
+           </div>
+           <div class="panal-body-footer  panal-body-footer_modified">
+            <div class="pull-left">
+              <a ui-sref="home"><button class="btn btn-default">Main Menu</button></a>
+              <button class="btn btn-primary" ng-click="previousPanel()">Previous</button>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-warning" ng-click="getQuote(quoteForm.$valid, quoteForm)">Get Quote</button>
+              <button class="btn btn-primary" ng-click="emailQuote(quoteForm.$valid, quoteForm)">Email Quote</button>
+              <button class="btn btn-danger" ng-click="saveQuote(quoteForm.$valid, quoteForm)">Save</button>
+              <button class="btn btn-success" ng-click="proceedToInstruction(quoteForm.$valid, quoteForm)">Proceed to Instruction</button>
+            </div>
+           </div>
+           <!-- {{quoteData | json}} -->
+       </form>       
+    </div>
+</div>

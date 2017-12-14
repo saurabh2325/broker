@@ -1,0 +1,139 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Agent Details :		  
+            <div class="pull-right">
+                <!-- <button type="button" class="btn btn-info btn-xs"><i class="fa fa-refresh"></i></button> -->
+                <button type="button" class="btn btn-danger btn-xs" ng-click="closePanel()"><i class="fa fa-remove"></i></button>
+            </div>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <div class="row show-hide-message" ng-show= successMsg>
+            <div class="alert alert-success">{{successMsg}}</div>
+        </div>
+        <div class="row show-hide-message" ng-show= errorMsg>
+            <div class="alert alert-danger">{{errorMsg}}</div>
+        </div>
+        <form name="agentForm" id="agentForm" novalidate>
+            <div class="form-body">
+                <h3 class="title-lbl">Basic Information</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Agent Code Id*</label>
+                            <input type="text" class="form-control" ng-model ="agentData.uid" name="uid" placeholder="agent code Id" ng-disabled="true" required>
+                            <p class="help-block" ng-show="(!agentForm.uid.$pristine && agentForm.uid.$error.required) || (agentForm.$submitted && agentForm.uid.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" class="form-control" ng-model ="agentData.company_name" name="company_name" placeholder="Company name">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Company Phone No.</label>
+                            <input type="text" class="form-control" ng-model ="agentData.company_contact_no" name="company_contact_no" placeholder="Company Contact No">
+                        </div>
+                        <div class="form-group">
+                            <label>First Name*</label>
+                            <input type="text" class="form-control" ng-model ="agentData.first_name" name="first_name" placeholder="First name" required>
+                            <p class="help-block" ng-show="(!agentForm.first_name.$pristine && agentForm.first_name.$error.required) || (agentForm.$submitted && agentForm.first_name.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name*</label>
+                            <input type="text" class="form-control" ng-model ="agentData.last_name" name="last_name" placeholder="Last name" required>
+                            <p class="help-block" ng-show="(!agentForm.last_name.$pristine && agentForm.last_name.$error.required) || (agentForm.$submitted && agentForm.last_name.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Email*</label>
+                            <input type="text" class="form-control" ng-model ="agentData.email" name="email" placeholder="Email address" required>
+                            <p class="help-block" ng-show="(!agentForm.email.$pristine && agentForm.email.$error.required) || (agentForm.$submitted && agentForm.email.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Territory*</label>
+                            <input type="text" class="form-control" ng-model ="agentData.territory" name="territory" placeholder="Territory/Area of working" required>
+                            <p class="help-block" ng-show="(!agentForm.territory.$pristine && agentForm.territory.$error.required) || (agentForm.$submitted && agentForm.territory.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Work Phone No</label>
+                            <input type="text" class="form-control" ng-model ="agentData.work_contact_no" name="work_contact_no" placeholder="Work phone no">   
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile No*</label>
+                            <input type="text" class="form-control" ng-model ="agentData.mobile_contact_no" name="mobile_contact_no" placeholder="Mobile no" required>
+                            <p class="help-block" ng-show="(!agentForm.mobile_contact_no.$pristine && agentForm.mobile_contact_no.$error.required) || (agentForm.$submitted && agentForm.mobile_contact_no.$error.required)" style="color: #c70505;">This field is required</p>
+                        </div>
+                        <!-- <div class="form-group" ng-class="{ 'has-success':(agentForm.firstPassword.$valid && !agentForm.firstPassword.$pristine), 'has-error':(!agentForm.firstPassword.$valid && !agentForm.firstPassword.$pristine) || (!agentForm.firstPassword.$valid && agentForm.$submitted) }">
+                            <label>Password*</label>   
+                            <input type="password" class="form-control" ng-model='firstPassword' placeholder="Password" aria-describedby="basic-addon2" name="firstPassword" ng-pattern="/^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])(?=.*?[\W]).{8,35}$/" ng-minlength="3" ng-maxlength="35" required="">
+                            <p class="help-block" ng-show="(!agentForm.firstPassword.$pristine && agentForm.firstPassword.$error.required) || (agentForm.$submitted && agentForm.firstPassword.$error.required)" style="color: #c70505;">This field is required</p>
+                            <ul ng-show="(!agentForm.firstPassword.$pristine && agentForm.firstPassword.$error.pattern) || (!agentForm.firstPassword.$pristine && agentForm.firstPassword.$error.minlength) || (!agentForm.firstPassword.$pristine && agentForm.firstPassword.$error.maxlength)" style="color: #c70505;" class="help-block">
+                                <li>Must contain at least one upper case letter</li>
+                                <li>Must contain at least one lower case letter</li>
+                                <li>Must contain at least one number</li>
+                                <li>Must contain at least one special character</li>
+                                <li>Must contain at least 8 characters but no more than</li>
+                            </ul>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-success':confirmed && !agentForm.confirmPassword.$error.required, 'has-error':( !confirmed && !agentForm.confirmPassword.$error.required) || (agentForm.confirmPassword.$error.required && !agentForm.confirmPassword.$pristine) || (agentForm.$submitted && agentForm.confirmPassword.$error.required) }">
+                            <label> Confirm Password*</label>
+                            <input type="password" name="confirmPassword" class=" form-control" match = '{{[firstPassword]}}' ng-change="agentData.password = confirm" ng-model='confirm' placeholder="Confirm password" aria-describedby="basic-addon2" required="" >
+                            <p class="help-block" ng-show="(!agentForm.confirmPassword.$pristine && agentForm.confirmPassword.$error.required) || (agentForm.$submitted && agentForm.confirmPassword.$error.required)" style="color: #c70505;">This field is required</p>
+                            <p class="help-block" ng-show="!confirmed && !agentForm.confirmPassword.$pristine && agentForm.firstPassword.$valid" style="color: #c70505;">Passwords do not match</p>
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" ng-model='agentData.status' value= "0"> Active
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                </label>
+                                <label>
+                                    <input type="radio" ng-model='agentData.status' value= "1">Inactive
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                </label>
+                            </div>
+                        </div> -->           
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="description">Building name/number:</label>
+                            <input type="text" class="form-control" ng-model ="agentData.address.number" name="number" placeholder="Building name/number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Street:</label>
+                            <input type="text" class="form-control" ng-model ="agentData.address.street" name="street" placeholder="Street">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Area:</label>
+                            <input type="text" class="form-control" ng-model ="agentData.address.area" name="area" placeholder="Area">
+                        </div>
+                        <div class="form-group">
+                            <label>Country</label>
+                            <input type="text" class="form-control" ng-model ="agentData.address.country" name="country" placeholder="Country">
+                           
+                        </div>
+                        <div class="form-group">
+                            <label>Town/City</label>
+                            <input type="text" class="form-control" ng-model ="agentData.address.city" name="city" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label>Postal Code</label>
+                            <input type="text" class="form-control" ng-model ="agentData.address.zip" name="zip" placeholder="Postal code">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Bank Details</label>
+                            <input type="text" class="form-control" ng-model ="agentData.bank_detail" name="bank_detail" placeholder="Bank detail">
+                            
+                        </div>          
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="panal-body-footer">
+        <button class="btn btn-default" ng-click="closePanel()">Cancel</button>
+        <button class="btn btn-primary" ng-click="createAgent(agentForm.$valid, agentForm)">Save</button>
+    </div>       
+</div>
+    
